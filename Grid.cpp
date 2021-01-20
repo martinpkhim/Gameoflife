@@ -43,7 +43,17 @@ void Grid::DrawGrid()
 	{
 		for(uint16_t j = 0;j < rawGrid[i].size();j++)
 		{
-			std::cout << rawGrid.at(i).at(j).GetState();
+			if(rawGrid.at(i).at(j).GetState())
+			{
+				std::cout << rawGrid.at(i).at(j).GetLiveCellSymbol();
+				//std::cout << 'X';
+			}
+			else
+			{
+				std::cout << rawGrid.at(i).at(j).GetDeadCellSymbol();
+				//std::cout << ' ';
+			}
+			
 		}
 		std::cout << std::endl;
 	}

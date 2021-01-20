@@ -5,6 +5,8 @@ Cell::Cell()
 	x = 0;
 	y = 0;
 	state = false;
+	deadCell = ' ';
+	liveCell = 'O';
 }
 
 Cell::Cell(uint16_t xVal, uint16_t yVal, bool iState)
@@ -12,6 +14,8 @@ Cell::Cell(uint16_t xVal, uint16_t yVal, bool iState)
 	x = xVal;
 	y = yVal;
 	state = iState;
+	deadCell = ' ';
+	liveCell = 'O';
 }
 
 Cell::~Cell()
@@ -59,4 +63,14 @@ void Cell::SetState(bool nState)
 bool Cell::GetState()
 {
 	return state;
+}
+
+char Cell::GetDeadCellSymbol()
+{
+	return deadCell;
+}
+
+char Cell::GetLiveCellSymbol()
+{
+	return liveCell;
 }
